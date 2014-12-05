@@ -55,9 +55,4 @@ function cssComponentPlugin(browserify, options) {
   return browserify;
 }
 
-function composeStylesheet(filenames) {
-  console.log(filenames);
-  return filenames.join('\n');
-}
-
 module.exports = cssComponentPlugin;
