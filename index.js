@@ -1,5 +1,5 @@
 var through = require('through');
-var lessCompile = require('./less-compiler.js')
+var compiler = require('./libs/compiler.js')
 var fs = require('fs');
 
 var isLessFilename = /\.less$/;
@@ -46,7 +46,7 @@ function cssComponentPlugin(browserify, options) {
 
     stream.css = through();
     stream.on('end', function() {
-      lessCompile(stream, filenames, output);
+      compiler(stream, filenames, output);
     });
 
     return stream;

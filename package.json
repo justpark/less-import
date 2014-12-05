@@ -11,5 +11,10 @@
     "browserify"
   ],
   "author": "Benjamin Michel <benjamin.michel.cn@gmail.com> (https://github.com/lone-star)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "less": "^2.1.1",
+    "through": "^2.3.6",
+    "underscore": "^1.7.0"
+  }
 }
