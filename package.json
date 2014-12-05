@@ -1,0 +1,15 @@
+{
+  "name": "less-import",
+  "version": "0.0.1",
+  "description": "Browserify plugin to import less files from javascript source",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "less",
+    "browserify"
+  ],
+  "author": "Benjamin Michel <benjamin.michel.cn@gmail.com> (https://github.com/lone-star)",
+  "license": "ISC"
+}
