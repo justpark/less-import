@@ -3,20 +3,24 @@
   "version": "0.0.1",
   "description": "Browserify plugin to import less files from javascript source",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/justpark/less-import.git"
   },
   "keywords": [
     "less",
     "browserify"
   ],
-  "author": "Benjamin Michel <benjamin.michel.cn@gmail.com> (https://github.com/lone-star)",
-  "license": "ISC",
-  "devDependencies": {
+  "author": {
+    "name": "Benjamin Michel",
+    "email": "benjamin.michel.cn@gmail.com",
+    "homepage": "https://github.com/lone-star",
+  }
+  "license": "MIT",
+  "dependencies": {
     "gulp": "^3.8.10",
     "gulp-less": "^2.0.1",
     "less-plugin-clean-css": "^1.2.0",
-    "through": "^2.3.6",
-    "through2": "^0.6.3"
+    "through": "^2.3.6"
   }
 }
