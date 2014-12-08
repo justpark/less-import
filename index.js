@@ -38,14 +38,16 @@ function cssComponentPlugin(browserify, options) {
         if (!cb) b.on('error', tr.emit.bind(tr, 'error'));
         b.pipe(tr);
         b.css.pipe(tr.css);
+        console.log('ready', filenames);
       });
       return tr;
     }
 
     var stream = bundle.apply(browserify, arguments);
 
+      console.log('css through');
     stream.css = through();
-    stream.on('end', function() {
+    stream.on('finish', function() {
       compiler(stream, filenames, output);
     });
 

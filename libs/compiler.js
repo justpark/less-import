@@ -14,6 +14,7 @@ function lessCompile(stream, filenames, output) {
 
     try {
       stream.css.queue(null);
+      stream.css.end();
     } catch (err) {
       stream.emit('error', err);
       stream.css.emit('error', err);
@@ -21,13 +22,12 @@ function lessCompile(stream, filenames, output) {
   });
 
   filenames.forEach(function(filename){
-    console.log('file: ', filename);
-    fs.readFile(filename, function (err, data) {
+    fs.readFile(filename, {encoding: 'utf8'}, function (err, data) {
+      if(err){console.log(err);}
       less.render(data.toString(), {
-        compress: true,
+        compress: false,
         paths: [path.dirname(filename)]
       }).then(function(css) {
-        console.log('css: ', arguments);
         try {
           stream.css.queue(css.css);
         } catch (err) {

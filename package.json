@@ -16,5 +16,8 @@
     "less": "^2.1.1",
     "through": "^2.3.6",
     "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "less-import": "git+https://github.com/justpark/less-import.git"
   }
 }
