@@ -43,10 +43,7 @@ module.exports = function(moduleOptions){
             .pipe(less({
               plugins: [cleancss]
             }))
-            .pipe(gulp.dest(path.join(
-              moduleOptions.destPath,
-              path.dirname(moduleOptions.endPoint)
-            )));
+            .pipe(gulp.dest(moduleOptions.dest));
 
           filenames = [];
         }
