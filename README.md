@@ -3,6 +3,9 @@ less-import
 
 Browserify plugin to import less files from javascript source
 
+### Install
+
+`npm install less-import --save-dev`
 
 #### GulpFile
 
