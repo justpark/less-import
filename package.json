@@ -12,12 +12,11 @@
   ],
   "author": "Benjamin Michel <benjamin.michel.cn@gmail.com> (https://github.com/lone-star)",
   "license": "ISC",
-  "dependencies": {
-    "less": "^2.1.1",
-    "through": "^2.3.6",
-    "underscore": "^1.7.0"
-  },
   "devDependencies": {
-    "less-import": "git+https://github.com/justpark/less-import.git"
+    "gulp": "^3.8.10",
+    "gulp-less": "^2.0.1",
+    "through": "^2.3.6",
+    "through2": "^0.6.3",
+    "vinyl-source-stream": "^1.0.0"
   }
 }
