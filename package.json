@@ -1,6 +1,6 @@
 {
   "name": "less-import",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Browserify plugin to import less files from javascript source",
   "main": "index.js",
   "repository": {
