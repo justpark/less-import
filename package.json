@@ -14,8 +14,8 @@
   "author": {
     "name": "Benjamin Michel",
     "email": "benjamin.michel.cn@gmail.com",
-    "homepage": "https://github.com/lone-star",
-  }
+    "homepage": "https://github.com/lone-star"
+  },
   "license": "MIT",
   "dependencies": {
     "gulp": "^3.8.10",
