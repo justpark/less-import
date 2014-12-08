@@ -1,7 +1,10 @@
 var through = require('through');
 var less = require('gulp-less');
 var gulp = require('gulp');
-var source = require('vinyl-source-stream');
+var path = require('path');
+
+var LessPluginCleanCSS = require("less-plugin-clean-css"),
+    cleancss = new LessPluginCleanCSS({advanced: true});
 
 var isLessFilename = /\.less$/;
 
@@ -36,10 +39,14 @@ module.exports = function(moduleOptions){
       var stream = bundle.apply(browserify, arguments);
       stream.on('finish', function() {
         if (filenames.length) {
-          gulp.src(filenames)
-            .pipe(less())
-            .pipe(source(moduleOptions.destName))
-            .pipe(gulp.dest(moduleOptions.destPath));
+          moduleOptions.gulp.src(filenames)
+            .pipe(less({
+              plugins: [cleancss]
+            }))
+            .pipe(gulp.dest(path.join(
+              moduleOptions.destPath,
+              path.dirname(moduleOptions.endPoint)
+            )));
 
           filenames = [];
         }

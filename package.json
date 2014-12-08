@@ -15,8 +15,8 @@
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-less": "^2.0.1",
+    "less-plugin-clean-css": "^1.2.0",
     "through": "^2.3.6",
-    "through2": "^0.6.3",
-    "vinyl-source-stream": "^1.0.0"
+    "through2": "^0.6.3"
   }
 }
