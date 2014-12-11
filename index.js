@@ -2,11 +2,14 @@ var through = require('through');
 var less = require('gulp-less');
 var gulp = require('gulp');
 var path = require('path');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer-core');
 
 var LessPluginCleanCSS = require("less-plugin-clean-css"),
     cleancss = new LessPluginCleanCSS({advanced: true});
 
 var isLessFilename = /\.less$/;
+
 
 var parsedFiles = [];
 
@@ -50,6 +53,9 @@ module.exports = function(moduleOptions){
             .on('error', function(err) {
               console.log(err.message);
             })
+            .pipe(postcss([
+              autoprefixer({ browsers: ['last 2 version'] })
+            ]))
             .pipe(gulp.dest(moduleOptions.dest));
         }
       });

@@ -18,8 +18,10 @@
   },
   "license": "MIT",
   "dependencies": {
+    "autoprefixer-core": "^4.0.2",
     "gulp": "^3.8.10",
     "gulp-less": "^2.0.1",
+    "gulp-postcss": "^3.0.0",
     "less-plugin-clean-css": "^1.2.0",
     "through": "^2.3.6"
   }
