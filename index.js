@@ -8,6 +8,8 @@ var LessPluginCleanCSS = require("less-plugin-clean-css"),
 
 var isLessFilename = /\.less$/;
 
+var parsedFiles = [];
+
 module.exports = function(moduleOptions){
   moduleOptions = moduleOptions || {};
 
@@ -34,19 +36,25 @@ module.exports = function(moduleOptions){
     var bundle = browserify.bundle;
 
     // Override browserify bundle
-    browserify.bundle = function(opts, cb) {
+    browserify.bundle = function() {
 
       var stream = bundle.apply(browserify, arguments);
-      stream.on('finish', function() {
-        if (filenames.length) {
-          moduleOptions.gulp.src(filenames)
+
+      browserify.on('file', function(file){
+        if (isLessFilename.exec(file) && parsedFiles.indexOf(file) === -1) {
+          parsedFiles.push(file);
+          moduleOptions.gulp.src(file)
             .pipe(less({
               plugins: [cleancss]
             }))
+            .on('error', function(err) {
+              console.log(err.message);
+            })
             .pipe(gulp.dest(moduleOptions.dest));
-
-          filenames = [];
         }
+      });
+      stream.on('finish', function(){
+        parsedFiles = [];
       });
 
       return stream;
